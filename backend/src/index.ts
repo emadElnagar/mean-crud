@@ -13,7 +13,7 @@ app.use(express.static("uploads/images"));
 
 mongoose.connect("mongodb://127.0.0.1:27017/meancrud");
 
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   res.send("Hello World!");
 });
 
