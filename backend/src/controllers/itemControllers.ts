@@ -26,3 +26,15 @@ export const newItem: RequestHandler = async (req, res) => {
   }
   res.json({ message: "This name already exists, Try another name" });
 };
+
+// Get all items
+export const allItems: RequestHandler = async (req, res) => {
+  try {
+    const items = await Item.find({});
+    res.status(200).json(items);
+  } catch (error: any) {
+    res.status(401).json({
+      message: error.message,
+    });
+  }
+};
