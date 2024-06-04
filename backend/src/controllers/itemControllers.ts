@@ -38,3 +38,21 @@ export const allItems: RequestHandler = async (req, res) => {
     });
   }
 };
+
+// Update item
+export const updateItem: RequestHandler = async (req, res) => {
+  const newItem = {
+    name: req.body.name,
+  };
+  Item.updateOne({ _id: req.params.id }, { $set: newItem })
+    .then((_result) => {
+      res.status(200).json({
+        message: "Item updated successfully",
+      });
+    })
+    .catch((error) => {
+      res.status(401).json({
+        message: error.message,
+      });
+    });
+};
