@@ -56,3 +56,18 @@ export const updateItem: RequestHandler = async (req, res) => {
       });
     });
 };
+
+// Delete item
+export const deleteItem: RequestHandler = async (req, res) => {
+  Item.deleteOne({ _id: req.params.id })
+    .then((_result) => {
+      res.status(200).json({
+        message: "Item Deleted Successfully",
+      });
+    })
+    .catch((error) => {
+      res.status(401).json({
+        message: error.message,
+      });
+    });
+};

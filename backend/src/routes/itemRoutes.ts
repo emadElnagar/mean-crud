@@ -1,5 +1,10 @@
 import { Router } from "express";
-import { allItems, newItem, updateItem } from "../controllers/itemControllers";
+import {
+  allItems,
+  deleteItem,
+  newItem,
+  updateItem,
+} from "../controllers/itemControllers";
 
 const itemRouter = Router();
 
@@ -11,5 +16,8 @@ itemRouter.get("/", allItems);
 
 // Update item
 itemRouter.patch("/:id", updateItem);
+
+// Delete item
+itemRouter.delete("/:id", deleteItem);
 
 export default itemRouter;
