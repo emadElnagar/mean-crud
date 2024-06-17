@@ -1,7 +1,7 @@
 node_modules/
 yarn.lock
 .vscode/
-.angular/cache/
+.angular/
 .env
 *.png
 *.jpg
