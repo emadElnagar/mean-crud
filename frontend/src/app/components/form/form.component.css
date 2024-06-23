@@ -1,0 +1,19 @@
+.form {
+  display: flex;
+  input {
+    padding: 20px 5px;
+    &:focus {
+      outline: none;
+    }
+  }
+  input[type="submit"] {
+    background: #FF0266;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 20px 25px;
+  }
+  input[type="text"] {
+    width: 100%;
+  }
+}
