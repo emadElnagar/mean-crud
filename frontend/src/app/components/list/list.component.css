@@ -1,4 +1,19 @@
 .row {
   width: 100%;
   display: flex;
+  justify-content: space-between;
+}
+
+button {
+  border: none;
+  padding: 5px 10px;
+}
+
+.update {
+  background: #FFDE03;
+}
+
+.delete {
+  background: #B00020;
+  margin: 0 10px;
 }
