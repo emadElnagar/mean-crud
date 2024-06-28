@@ -14,6 +14,9 @@ itemRouter.post("/", newItem);
 // Get all items
 itemRouter.get("/", allItems);
 
+// Get single item
+itemRouter.get("/:id", updateItem);
+
 // Update item
 itemRouter.patch("/:id", updateItem);
 

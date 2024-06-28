@@ -39,6 +39,18 @@ export const allItems: RequestHandler = async (req, res) => {
   }
 };
 
+// Get single item
+export const singleItem: RequestHandler = async (req, res) => {
+  const item = Item.findOne({ _id: req.params.id });
+  if (item) {
+    res.status(200).json(item);
+  } else {
+    res.status(404).json({
+      message: "Item not found",
+    });
+  }
+};
+
 // Update item
 export const updateItem: RequestHandler = async (req, res) => {
   const newItem = {
